@@ -49,4 +49,5 @@ def comente():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    debug_mode = os.environ.get("FLASK_DEBUG", "").strip().lower() in ("1", "true", "yes")
+    app.run(debug=debug_mode)
